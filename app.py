@@ -16,6 +16,10 @@ import mlflow
 from mlflow.models import infer_signature
 import mlflow.sklearn
 
+import os
+os.environ["MLFLOW_TRACKING_USERNAME"] = "fauxcadet"
+os.environ["MLFLOW_TRACKING_PASSWORD"] = "8f842c75d8871682a6ebf260691a999bf868f79a"
+
 import logging
 
 logging.basicConfig(level=logging.WARN)
@@ -80,7 +84,7 @@ if __name__ == "__main__":
 
         ## For Remote server only(DAGShub)
 
-        remote_server_uri="https://dagshub.com/krishnaik06/mlflowexperiments.mlflow"
+        remote_server_uri="https://dagshub.com/fauxcadet/ML_Flow_Project.mlflow"
         mlflow.set_tracking_uri(remote_server_uri)
 
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
